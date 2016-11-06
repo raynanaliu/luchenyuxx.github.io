@@ -6,6 +6,9 @@
     <title>COMMERCIAL PROJECTS.</title>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
+    <script src="bower_components/jquery-cycle2/build/plugin/jquery.cycle2.center.min.js"></script>
+    <style src="css/scaler.css"></style>
+    <script src="javascript/scaler.js"></script>
     <style media="screen">
         html,
         body {
@@ -52,7 +55,6 @@
         .pics {
             height: 100%;
             width: 100%;
-            /*z-index: -1;*/
         }
 
         .pics>img {
@@ -78,7 +80,7 @@
     <div id="foot">
         <img src="images/foot.png" style="width:31.352mm;" /></div>
     <div id="bg">
-        <div id="jr" class="pics">
+        <div id="jr" class="pics" data-cycle-center-vert=true>
             <img src="images/commercial/1.jpg" />
             <img src="images/commercial/2.jpg" />
             <img src="images/commercial/3.jpg" />
@@ -89,42 +91,6 @@
             <img src="images/commercial/10.jpg" />
         </div>
     </div>
-    <!-- <script type="text/javascript" src="javascript/myScript.js"></script>
-    <script type="text/javascript">
-    animateIn = function(i){
-      switch (i) {
-        case 1:
-          items.eq(i).animate({'margin-left':0},{duration:animateDuration, queue:false})
-          break;
-        case 2:
-          items.eq(i).animate({'margin-left':0},{duration:animateDuration, queue:false})
-          break;
-        default:
-      }
-    }
-    rollbackItem = function(i){
-      switch (i) {
-        case 1:
-          items.eq(i).css('margin-left','15.1%')
-          break;
-        case 2:
-          items.eq(i).css('margin-left','84.9%')
-          break;
-        default:
-      }
-    }
-    beforeAnimateOut = function(i){
-    }
-    animateOutProperty = function(i){
-      switch (i) {
-        case 1:
-          return {'margin-left':'-84.9%'}
-          break;
-        default:
-          return {}
-      }
-    }
-    </script> -->
 </body>
 
 </html>
