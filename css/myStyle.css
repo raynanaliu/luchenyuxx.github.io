@@ -1,0 +1,44 @@
+.slide-container {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+html,
+body {
+    padding: 0pt;
+    margin: 0pt;
+    position: fixed;
+    height: 100%;
+    font-family: "Avenir Next", serif;
+    font-style: italic;
+    min-width: 700px;
+    min-height: 500px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide-container>img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 29pt;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    visibility: visible;
+}

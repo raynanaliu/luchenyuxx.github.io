@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>COLLECTION.</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <style media="screen">
+        html,
+        body {
+            padding: 0pt;
+            margin: 0pt;
+            position: fixed;
+            height: 100%;
+            font-family: "Avenir Next", serif;
+            font-style: italic;
+            min-width: 700px;
+            min-height: 500px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #title {
+            font-weight: bold;
+            font-size: 29pt;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            visibility: visible;
+        }
+
+        .mask {
+            float: left;
+            /*margin: 40px;*/
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            z-index: -5;
+        }
+        ul{
+          margin: 0;
+          padding: 0;
+        }
+
+        ul.images {
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        ul.images li {
+            float: left;
+        }
+        li>img {
+          width: 100%;
+          /*position: relative;
+          top: 50%;
+          transform: translateY(-50%);*/
+          float: left;
+          z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">COMMERCIAL PROJECT.</div>
+    <div style="position:absolute;left:7.761mm;bottom:8.777mm;">
+        <img src="images/spot.png" style="width:8.467mm;" /></div>
+    <div style="position:absolute;right:7.806mm;bottom:7.056mm;">
+        <img src="images/foot.png" style="width:31.352mm;" /></div>
+    <div class="mask">
+        <ul class="images">
+            <li>
+                <img src="images/commercial/1.jpg" />
+            </li>
+            <li>
+                <img src="images/commercial/2.jpg" />
+            </li>
+            <li>
+                <img src="images/commercial/3.jpg" />
+            </li>
+            <li>
+                <img src="images/commercial/4.jpg" />
+            </li>
+            <li>
+                <img src="images/commercial/5.jpg" />
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var images = $('ul.images li');
+        var lastElem = images.length - 1;
+        var mask = $('.mask ul.images');
+        var target = 0;
+
+        // mask.css('width', imgWidth * (lastElem + 1) + 'px');
+
+        function sliderResponse(target) {
+            mask.stop(true, false).animate({
+                'left': '-100%'
+            }, 300);
+        }
+        $('.mask').click(function() {
+            // target = $('ul.triggers li.selected').index();
+            target === lastElem ? target = 0 : target = target + 1;
+            sliderResponse(target);
+            // resetTiming();
+        });
+        // $('.prev').click(function() {
+        //     target = $('ul.triggers li.selected').index();
+        //     lastElem = triggers.length - 1;
+        //     target === 0 ? target = lastElem : target = target - 1;
+        //     sliderResponse(target);
+        //     resetTiming();
+        // });
+        // function sliderTiming() {
+        //     target = $('ul.triggers li.selected').index();
+        //     target === lastElem ? target = 0 : target = target + 1;
+        //     sliderResponse(target);
+        // }
+        // var timingRun = setInterval(function() {
+        //     sliderTiming();
+        // }, 2000);
+        //
+        // function resetTiming() {
+        //     clearInterval(timingRun);
+        //     timingRun = setInterval(function() {
+        //         sliderTiming();
+        //     }, 2000);
+        // }
+    </script>
+</body>
+
+</html>
