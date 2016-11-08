@@ -1,0 +1,9 @@
+#title {
+    font-weight: bold;
+    font-size: 29pt;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    visibility: visible;
+    z-index: 1000;
+}

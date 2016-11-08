@@ -6,68 +6,20 @@
     <title>COMMERCIAL PROJECTS.</title>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
-    <script src="bower_components/jquery-cycle2/build/plugin/jquery.cycle2.center.min.js"></script>
-    <style src="css/scaler.css"></style>
-    <script src="javascript/scaler.js"></script>
-    <style media="screen">
-        html,
-        body {
-            padding: 0pt;
-            margin: 0pt;
-            position: fixed;
-            height: 100%;
-            width: 100%;
-            font-family: "Avenir Next", serif;
-            font-style: italic;
-            min-width: 700px;
-            min-height: 500px;
-        }
-
-        #bg {
-            height: 100%;
-            width: 100%;
-        }
-
-        #title {
-            font-weight: bold;
-            font-size: 29pt;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            visibility: visible;
-            z-index: 1000;
-        }
-
-        #spot {
-            position: absolute;
-            left: 7.761mm;
-            bottom: 8.777mm;
-            z-index: 1001;
-        }
-
-        #foot {
-            position: absolute;
-            right: 7.806mm;
-            bottom: 7.056mm;
-            z-index: 1002;
-        }
-
-        .pics {
-            height: 100%;
-            width: 100%;
-        }
-
-        .pics>img {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/spot.css" />
+    <link rel="stylesheet" type="text/css" href="css/title.css" />
+    <link rel="stylesheet" type="text/css" href="css/foot.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/onepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/cycle.css" />
     <script type="text/javascript">
         $(document).ready(function() {
             $('#jr').cycle({
                 fx: 'fade',
                 next: '#jr',
-                speed:     600,
-                timeout: 0
+                speed: 600,
+                timeout: 0,
+                slides: '> div'
             });
         });
     </script>
@@ -79,16 +31,62 @@
         <img src="images/spot.png" style="width:8.467mm;" /></div>
     <div id="foot">
         <img src="images/foot.png" style="width:31.352mm;" /></div>
-    <div id="bg">
-        <div id="jr" class="pics" data-cycle-center-vert=true>
-            <img src="images/commercial/1.jpg" />
-            <img src="images/commercial/2.jpg" />
-            <img src="images/commercial/3.jpg" />
-            <img src="images/commercial/5.jpg" />
-            <img src="images/commercial/6.jpg" />
-            <img src="images/commercial/8.jpg" />
-            <img src="images/commercial/9.jpg" />
-            <img src="images/commercial/10.jpg" />
+    <div id="jr">
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/1.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/2.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/3.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/5.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/6.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/8.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/9.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <img src="images/commercial/10.jpg" />
+                </div>
+            </div>
         </div>
     </div>
 </body>

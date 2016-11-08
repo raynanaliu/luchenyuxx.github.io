@@ -1,0 +1,10 @@
+html,
+body {
+    padding: 0pt;
+    margin: 0pt;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /*min-width: 700px;
+    min-height: 500px;*/
+}
