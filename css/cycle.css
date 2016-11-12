@@ -60,7 +60,7 @@ $(document).ready(function() {
     vertical-align: middle;
     height: 100%;
     position: static;
-    top: 0;
+    /*top: 0;*/
     left: 0;
     top: 50%;
     width: 100%;

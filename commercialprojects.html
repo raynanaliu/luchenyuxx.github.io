@@ -14,15 +14,68 @@
     <link rel="stylesheet" type="text/css" href="css/cycle.css" />
     <script type="text/javascript">
         $(document).ready(function() {
+
             $('#jr').cycle({
-                fx: 'fade',
+                fx: 'scrollHorz',
                 next: '#jr',
-                speed: 600,
+                speed: 300,
                 timeout: 0,
                 slides: '> div'
             });
+            $('#jr').on('cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+                var incomingIndex = $(incomingSlideEl).index()
+                switch (incomingIndex) {
+                    case 1:
+                        $('#animation1').delay(1000).animate({
+                            'margin-right': '25%'
+                        })
+                        break;
+                    case 5:
+                        $('#animation2').delay(1000).animate({
+                            'right': '-15%'
+                        })
+                        break;
+                    default:
+                }
+                console.log(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag)
+            });
+            $('#jr').on('cycle-before', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+                var incomingIndex = $(incomingSlideEl).index()
+                switch (incomingIndex) {
+                    case 1:
+                        $('#animation1').css('margin-right', '17.3%')
+                        break;
+                    case 5:
+                        $('#animation2').css('right', '0')
+                        break;
+                    default:
+
+                }
+                console.log(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag)
+            });
+            $('#animation1').css('margin-right', '17.3%')
+            $('#animation1').delay(1000).animate({
+                'margin-right': '25%'
+            })
         });
     </script>
+    <style media="screen">
+        div.wrap {
+            position: relative;
+            line-height: 0;
+        }
+
+        .wrap img:nth-of-type(1) {
+            width: 37%;
+            position: relative;
+        }
+
+        .wrap img:nth-of-type(2) {
+            right: 0;
+            height: 100%;
+            position: absolute;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,7 +88,7 @@
         <div>
             <div>
                 <div>
-                    <img src="images/commercial/1.jpg" />
+                    <img id="animation1" src="images/commercial/1.jpg" />
                 </div>
             </div>
         </div>
@@ -56,35 +109,17 @@
         <div>
             <div>
                 <div>
-                    <img src="images/commercial/5.jpg" />
+                    <img src="images/commercial/4.jpg" />
                 </div>
             </div>
         </div>
         <div>
             <div>
                 <div>
-                    <img src="images/commercial/6.jpg" />
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>
-                    <img src="images/commercial/8.jpg" />
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>
-                    <img src="images/commercial/9.jpg" />
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>
-                    <img src="images/commercial/10.jpg" />
+                    <div class="wrap">
+                        <img src="images/commercial/seperated/7.jpg" />
+                        <img id="animation2" src="images/commercial/seperated/8.jpg" />
+                    </div>
                 </div>
             </div>
         </div>
