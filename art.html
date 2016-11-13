@@ -3,29 +3,118 @@
 
 <head>
     <meta charset="utf-8">
-    <title>COLLECTION.</title>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+    <title>ART.</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/spot.css" />
+    <link rel="stylesheet" type="text/css" href="css/title.css" />
+    <link rel="stylesheet" type="text/css" href="css/foot.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/onepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/cycle.css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#jr').cycle({
+                fx: 'scrollHorz',
+                next: '#jr',
+                speed: 300,
+                timeout: 0,
+                slides: '> div'
+            });
+            $('#slide').cycle({
+                fx: 'scrollHorz'
+            })
+            $('#jr').on('cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+              if($(incomingSlideEl).parent().is('#jr')){
+                var incomingIndex = $(incomingSlideEl).index()
+                var outgoingSlide = $(outgoingSlideEl).index()
+                switch (incomingIndex) {
+                    case 2:
+                        document.getElementById("video1").play()
+                        console.log("play video")
+                        break;
+                    default:
+                }
+                switch (outgoingSlide) {
+                    case 3:
+                        $('#slide').css('display', 'none')
+                        break;
+                    default:
+                }
+              }
+            });
+            $('#jr').on('cycle-before', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+              if($(incomingSlideEl).parent().is('#jr')){
+                var incomingIndex = $(incomingSlideEl).index()
+                var outgoingSlide = $(outgoingSlideEl).index()
+                switch (incomingIndex) {
+                    case 3:
+                        $('#slide').css('display', 'block')
+                        break;
+                    default:
+                }
+                switch (outgoingSlide) {
+                    case 2:
+                        document.getElementById("video1").load()
+                        console.log("pause video")
+                        break;
+                    default:
+                }
+              }
+            });
+        });
+    </script>
+    <style media="screen">
+        div.wrap {
+            position: relative;
+            line-height: 0;
+        }
+    </style>
 </head>
 
 <body>
     <div id="title">ART.</div>
-    <div style="position:absolute;left:7.761mm;bottom:8.777mm;">
+    <div id="spot">
         <img src="images/spot.png" style="width:8.467mm;" /></div>
-    <div style="position:absolute;right:7.806mm;bottom:7.056mm;">
+    <div id="foot">
         <img src="images/foot.png" style="width:31.352mm;" /></div>
-    <div id="slide">
-        <div class="slide-container"><img src="images/art/web design.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design2.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design3.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design4.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design5.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design6.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design7.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design8.jpg" /></div>
-        <div class="slide-container"><img src="images/art/web design9.jpg" /></div>
+    <div id="jr">
+        <div>
+            <div>
+                <div>
+                    <img src="images/art/web design.jpg" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <div class="wrap">
+                        <img src="images/art/separated/web design2.jpg" style="width:100%" />
+                        <div class="wrap" style="text-align:center;background:black;">
+                            <video id="video1" width="80%">
+                            <source src="videos/untouchable.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <div class="wrap">
+                        <img src="images/art/separated/5.jpg" style="width:100%" />
+                        <img src="images/art/separated/6.jpg" style="width:100%" />
+                        <div id="slide" style="display:none">
+                            <img src="images/art/separated/4.jpg" style="width:100%" />
+                            <img src="images/art/separated/7.jpg" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script type="text/javascript" src="javascript/myScript.js"></script>
 </body>
 
 </html>
