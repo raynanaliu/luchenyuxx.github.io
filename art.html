@@ -4,70 +4,129 @@
 <head>
     <meta charset="utf-8">
     <title>ART.</title>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/spot.css" />
     <link rel="stylesheet" type="text/css" href="css/title.css" />
     <link rel="stylesheet" type="text/css" href="css/foot.css" />
     <link rel="stylesheet" type="text/css" href="css/font.css" />
     <link rel="stylesheet" type="text/css" href="css/onepage.css" />
-    <link rel="stylesheet" type="text/css" href="css/cycle.css" />
+    <link rel="stylesheet" type="text/css" href="css/paintingboard.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/Swiper/dist/css/swiper.min.css" />
+    <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#jr').cycle({
-                fx: 'scrollHorz',
-                next: '#jr',
-                speed: 300,
-                timeout: 0,
-                slides: '> div'
-            });
-            $('#slide').cycle({
-                fx: 'scrollHorz'
+            var swiper1 = new Swiper('.swiper1', {
+                loop: true,
+                nextButton: '.swiper1',
+                onSlideChangeStart: function(swiper) {
+                    switch (swiper.activeIndex) {
+                        default:
+                    }
+                    switch (swiper.previousIndex) {
+                        case 2:
+                            $(".video1").each(function(i) {
+                                this.load()
+                            })
+                            break;
+                        default:
+                    }
+                },
+                onSlideChangeEnd: function(swiper) {
+                    switch (swiper.activeIndex) {
+                        case 2:
+                            $(".video1").each(function(i) {
+                                this.play()
+                            })
+                            break;
+                        default:
+                    }
+                }
             })
-            $('#jr').on('cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
-              if($(incomingSlideEl).parent().is('#jr')){
-                var incomingIndex = $(incomingSlideEl).index()
-                var outgoingSlide = $(outgoingSlideEl).index()
-                switch (incomingIndex) {
-                    case 2:
-                        document.getElementById("video1").play()
-                        console.log("play video")
-                        break;
-                    default:
+            var swiper2 = new Swiper('.swiper2', {
+                loop: true,
+                autoplay: 4000
+            })
+            var swiper3 = new Swiper('.swiper3', {
+                loop: true,
+                direction: 'vertical',
+                autoplay: 4000
+            })
+            var swiper4 = new Swiper('.swiper4', {
+                    loop: true,
+                    direction: 'vertical',
+                    autoplay: 3000
+                })
+                // var swiper5 = new Swiper('.swiper5', {
+                //     loop:true,
+                //     direction: 'vertical',
+                //     sliderPerView:4,
+                //     spaceBetween: 30,
+                //     autoplay:3000
+                // })
+                // var swiper6 = new Swiper('.swiper6', {
+                //     loop:true,
+                //     direction: 'vertical',
+                //     slidesPerColumnFill: 'row',
+                //     sliderPerView:4,
+                //     spaceBetween: 30,
+                //     autoplay:3000
+                // })
+                // var swiper7 = new Swiper('.swiper7', {
+                //     loop:true,
+                //     direction: 'vertical',
+                //     sliderPerColumn:4,
+                //     spaceBetween: 30,
+                //     autoplay:3000
+                // })
+                // var swiper8 = new Swiper('.swiper8', {
+                //     loop:true,
+                //     direction: 'vertical',
+                //     sliderPerView:3,
+                //     spaceBetween: 30,
+                //     autoplay:3000
+                // })
+            var hidden, visibilityChange;
+            if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support
+                hidden = "hidden";
+                visibilityChange = "visibilitychange";
+            } else if (typeof document.msHidden !== "undefined") {
+                hidden = "msHidden";
+                visibilityChange = "msvisibilitychange";
+            } else if (typeof document.webkitHidden !== "undefined") {
+                hidden = "webkitHidden";
+                visibilityChange = "webkitvisibilitychange";
+            }
+
+            function handleVisibilityChange() {
+                if (document[hidden]) {
+                  swiper2.stopAutoplay()
+                  swiper3.stopAutoplay()
+                  swiper4.stopAutoplay()
+                } else {
+                  swiper2.update()
+                  swiper3.update()
+                  swiper4.update()
                 }
-                switch (outgoingSlide) {
-                    case 3:
-                        $('#slide').css('display', 'none')
-                        break;
-                    default:
-                }
-              }
-            });
-            $('#jr').on('cycle-before', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
-              if($(incomingSlideEl).parent().is('#jr')){
-                var incomingIndex = $(incomingSlideEl).index()
-                var outgoingSlide = $(outgoingSlideEl).index()
-                switch (incomingIndex) {
-                    case 3:
-                        $('#slide').css('display', 'block')
-                        break;
-                    default:
-                }
-                switch (outgoingSlide) {
-                    case 2:
-                        document.getElementById("video1").load()
-                        console.log("pause video")
-                        break;
-                    default:
-                }
-              }
-            });
+            }
+
+            // Warn if the browser doesn't support addEventListener or the Page Visibility API
+            if (typeof document.addEventListener === "undefined" || typeof document[hidden] === "undefined") {
+                console.log("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+            } else {
+                // Handle page visibility change
+                document.addEventListener(visibilityChange, handleVisibilityChange, false);
+            }
         });
     </script>
     <style media="screen">
         div.wrap {
             position: relative;
             line-height: 0;
+        }
+
+        .swiper1 {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -78,37 +137,218 @@
         <img src="images/spot.png" style="width:8.467mm;" /></div>
     <div id="foot">
         <img src="images/foot.png" style="width:31.352mm;" /></div>
-    <div id="jr">
-        <div>
-            <div>
+    <div class="swiper-container swiper1">
+        <div class="swiper-wrapper">
+            <div class="board swiper-slide">
                 <div>
-                    <img src="images/art/web design.jpg" />
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>
-                    <div class="wrap">
-                        <img src="images/art/separated/web design2.jpg" style="width:100%" />
-                        <div class="wrap" style="text-align:center;background:black;">
-                            <video id="video1" width="80%">
-                            <source src="videos/untouchable.mp4" type="video/mp4">
-                            </video>
+                    <div>
+                        <div>
+                            <img src="images/art/web design.jpg" />
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div>
+
+            <div class="board swiper-slide">
                 <div>
-                    <div class="wrap">
-                        <img src="images/art/separated/5.jpg" style="width:100%" />
-                        <img src="images/art/separated/6.jpg" style="width:100%" />
-                        <div id="slide" style="display:none">
-                            <img src="images/art/separated/4.jpg" style="width:100%" />
-                            <img src="images/art/separated/7.jpg" style="width:100%" />
+                    <div>
+                        <div>
+                            <div class="wrap">
+                                <img src="images/art/separated/web design2.jpg" style="width:100%" />
+                                <div class="wrap" style="text-align:center;background:black;">
+                                    <video class="video1" width="80%">
+                                    <source src="videos/untouchable.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="board swiper-slide">
+                <div>
+                    <div>
+                        <div>
+                            <div class="wrap">
+                                <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
+                                <img src="images/art/separated/5.jpg" style="width:100%;position:absolute;top:0;left:0;" />
+                                <img src="images/art/separated/6.jpg" style="width:100%;position:absolute;top:24.15%;left:0;" />
+                                <div class="swiper-container swiper2" style="width:100%;height:71.75%;position:absolute;bottom:0;left:0;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/4.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/7.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="board swiper-slide">
+                <div>
+                    <div>
+                        <div>
+                            <img src="images/art/web design5.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="board swiper-slide">
+                <div>
+                    <div>
+                        <div>
+                            <div class="wrap">
+                                <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
+                                <img src="images/art/separated/5.jpg" style="width:100%;position:absolute;top:0;left:0;" />
+                                <img src="images/art/separated/bars.png" style="width:100%;position:absolute;top:23.1%;left:0;" />
+                                <div class="swiper-container slide5" style="width:17.85%;height:80%;position:absolute;left:13.4375%;bottom:0;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/8.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/12.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/16.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-container slide6" style="width:17.85%;height:80%;position:absolute;left:32.8125%;bottom:0;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/9.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/13.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/17.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-container slide7" style="width:17.85%;height:80%;position:absolute;left:52.1875%;bottom:0;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/10.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/14.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/18.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-container slide8" style="width:17.85%;height:80%;position:absolute;left:71.5625%;bottom:0;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/11.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/15.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/19.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="board swiper-slide">
+                <div>
+                    <div>
+                        <div>
+                            <div class="wrap">
+                                <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
+                                <img src="images/art/separated/5.jpg" style="width:100%;position:absolute;top:0;left:0;" />
+                                <img src="images/art/separated/bars.png" style="width:100%;position:absolute;top:23.1%;left:0;" />
+                                <div class="swiper-container slide5" style="width:80%;height:80%;position:absolute;left:10%;bottom:45%;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/8.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/9.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <img src="images/art/separated/10.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <img src="images/art/separated/11.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-container slide6" style="width:80%;height:80%;position:absolute;left:10%;bottom:25%;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/12.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/13.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/14.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/15.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-container slide7" style="width:80%;height:80%;position:absolute;left:10%;bottom:5%;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/16.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/17.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/18.jpg" style="width:100%" />
+                                        </div><div class="swiper-slide">
+                                            <img src="images/art/separated/19.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="board swiper-slide">
+                <div>
+                    <div>
+                        <div>
+                            <div class="wrap">
+                                <div class="swiper-container swiper3" style="width:47.1875%;height:100%;display:block;position:absolute;left:0;bottom:0">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/webdesign7left.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/webdesign9left.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <img src="images/art/separated/webdesign9middle.jpg" style="position:relative;left:47.187%;width:5.814%;" />
+                                <div class="swiper-container swiper4" style="width:47%;height:100%;position:absolute;right:0;bottom:0;display:block;">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/webdesign7right.jpg" style="width:100%" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/art/separated/webdesign9right.jpg" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

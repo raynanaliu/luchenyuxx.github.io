@@ -4,56 +4,54 @@
 <head>
     <meta charset="utf-8">
     <title>COMMERCIAL PROJECTS.</title>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/spot.css" />
     <link rel="stylesheet" type="text/css" href="css/title.css" />
     <link rel="stylesheet" type="text/css" href="css/foot.css" />
     <link rel="stylesheet" type="text/css" href="css/font.css" />
     <link rel="stylesheet" type="text/css" href="css/onepage.css" />
-    <link rel="stylesheet" type="text/css" href="css/cycle.css" />
+    <link rel="stylesheet" type="text/css" href="css/paintingboard.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/Swiper/dist/css/swiper.min.css" />
+    <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-
-            $('#jr').cycle({
-                fx: 'scrollHorz',
-                next: '#jr',
-                speed: 300,
-                timeout: 0,
-                slides: '> div'
-            });
-            $('#jr').on('cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
-                var incomingIndex = $(incomingSlideEl).index()
-                switch (incomingIndex) {
-                    case 1:
-                        $('#animation1').delay(1000).animate({
-                            'margin-right': '25%'
-                        })
-                        break;
-                    case 5:
-                        $('#animation2').delay(1000).animate({
-                            'right': '-15%'
-                        })
-                        break;
-                    default:
+            var delayTime = 300
+            var mySwiper = new Swiper('.swiper-container', {
+                loop: true,
+                nextButton: '.swiper-container',
+                onSlideChangeStart: function(swiper) {
+                    switch (swiper.activeIndex) {
+                        case 6:
+                        case 1:
+                            $('.animation1').css('left', '7.7%')
+                            break;
+                        case 5:
+                            $('.animation2').css('right', '0')
+                            break;
+                        default:
+                    }
+                },
+                onSlideChangeEnd: function(swiper) {
+                    switch (swiper.activeIndex) {
+                        case 6:
+                        case 1:
+                            $('.animation1').delay(delayTime).animate({
+                                'left': '0'
+                            })
+                            break;
+                        case 5:
+                            $('.animation2').delay(delayTime).animate({
+                                'right': '-15%'
+                            })
+                            break;
+                        default:
+                    }
+                    console.log("slide change end", swiper.activeIndex, swiper.previousIndex)
                 }
-            });
-            $('#jr').on('cycle-before', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
-                var incomingIndex = $(incomingSlideEl).index()
-                switch (incomingIndex) {
-                    case 1:
-                        $('#animation1').css('margin-right', '17.3%')
-                        break;
-                    case 5:
-                        $('#animation2').css('right', '0')
-                        break;
-                    default:
-
-                }
-            });
-            $('#animation1').css('margin-right', '17.3%')
-            $('#animation1').delay(1000).animate({
-                'margin-right': '25%'
+            })
+            $('.animation1').css('left', '7.7%')
+            $('.animation1').delay(1000).animate({
+                'left': '0'
             })
         });
     </script>
@@ -73,6 +71,11 @@
             height: 100%;
             position: absolute;
         }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -82,46 +85,59 @@
         <img src="images/spot.png" style="width:8.467mm;" /></div>
     <div id="foot">
         <img src="images/foot.png" style="width:31.352mm;" /></div>
-    <div id="jr">
-        <div>
-            <div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="board swiper-slide">
                 <div>
-                    <img id="animation1" src="images/commercial/1.jpg" />
+                    <div>
+                        <div>
+                            <img class="animation1" src="images/commercial/1.jpg" style="position:relative"/>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div>
+            <div class="board swiper-slide">
                 <div>
-                    <img src="images/commercial/2.jpg" />
+                    <div>
+                        <div>
+                            <img src="images/commercial/2.jpg" />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div>
+            <div class="board swiper-slide">
                 <div>
-                    <img src="images/commercial/3.jpg" />
+                    <div>
+                        <div>
+                            <img src="images/commercial/3.jpg" />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div>
+            <div class="board swiper-slide">
                 <div>
-                    <img src="images/commercial/4.jpg" />
+                    <div>
+                        <div>
+                            <img src="images/commercial/4.jpg" />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-            <div>
+            <div class="board swiper-slide">
                 <div>
-                    <div class="wrap">
-                        <img src="images/commercial/separated/7.jpg" />
-                        <img id="animation2" src="images/commercial/separated/8.jpg" />
+                    <div>
+                        <div>
+                            <div class="wrap">
+                                <img src="images/commercial/separated/7.jpg" />
+                                <img class="animation2" src="images/commercial/separated/8.jpg" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

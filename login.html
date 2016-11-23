@@ -4,20 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/spot.css" />
+    <link rel="stylesheet" type="text/css" href="css/title.css" />
+    <link rel="stylesheet" type="text/css" href="css/foot.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/onepage.css" />
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <style media="screen">
-        html,
-        body {
-            padding: 0pt;
-            margin: 0pt;
-            position: relative;
-            height: 100%;
-            font-family: "Avenir Next", serif;
-            font-style: italic;
-            min-width: 600px;
-            min-height: 400px;
-        }
-
         #pincode {
             transform: translate(-50%, -50%);
             margin: 0;
@@ -38,24 +31,15 @@
             color: transparent;
             text-shadow: 0px 0px 0px black;
         }
-
-        #title {
-            font-weight: bold;
-            font-size: 29pt;
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            visibility: visible;
-        }
     </style>
 </head>
 
 <body>
     <div id="title">COMMERCIAL PROJECT.</div>
-    <div style="position:absolute;left:7.761mm;bottom:8.777mm;">
-        <img src="images/spot.jpg" style="width:8.467mm;" /></div>
-    <div style="position:absolute;right:7.806mm;bottom:7.056mm;">
-        <img src="images/foot.jpg" style="width:31.352mm;" /></div>
+    <div id="spot">
+        <img src="images/spot.png" style="width:8.467mm;" /></div>
+    <div id="foot">
+        <img src="images/foot.png" style="width:31.352mm;" /></div>
     <div id="pincode">
         <div id="input-msg" style="margin: 0px 0px 9.12px 0px;text-align:center;font-size: 9pt;color:red;">PLEASE ENTER THE PASSWORD.</div>
         <input class="pinbox" type="password" maxlength=1 id="1" oninput="moveOnInput(null,this,'a')" />
