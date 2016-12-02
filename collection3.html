@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>COLLECTION.</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/spot.css" />
+    <link rel="stylesheet" type="text/css" href="css/title.css" />
+    <link rel="stylesheet" type="text/css" href="css/foot.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/onepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/paintingboard.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/Swiper/dist/css/swiper.min.css" />
+    <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var swiper1 = new Swiper('.swiper1', {
+                loop: true,
+                direction: 'vertical',
+                nextButton: 'body'
+            })
+        });
+    </script>
+    <style media="screen">
+        div.wrap {
+            position: relative;
+            line-height: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">COLLECTION.</div>
+    <div id="spot">
+        <img src="images/spot.png" style="width:8.467mm;" /></div>
+    <div id="foot">
+        <img src="images/foot.png" style="width:31.352mm;" /></div>
+    <div class="board">
+        <div>
+            <div>
+                <div>
+                    <div class="wrap">
+                        <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
+                        <img src="images/collection/separated/26left.jpg" style="position:absolute;width:57.625%;height:100%;top:0;left:0" />
+                        <div class="swiper-container swiper1" style="position:absolute;width:42.375%;height:100%;top:0;right:0;">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/collection/separated/25right.jpg" style="width:100%" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/collection/separated/26right.jpg" style="width:100%" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
