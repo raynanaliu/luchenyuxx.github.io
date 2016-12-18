@@ -18,6 +18,8 @@
             var delayTime = 300
             var mySwiper = new Swiper('.swiper-container', {
                 loop: true,
+                preloadImages: false,
+                lazyLoading: true,
                 nextButton: '.swiper-container',
                 onSlideChangeStart: function(swiper) {
                     switch (swiper.activeIndex) {
