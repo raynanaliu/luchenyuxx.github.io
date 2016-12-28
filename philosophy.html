@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>PHILOSOPHY.</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/spot.css" />
+    <link rel="stylesheet" type="text/css" href="css/title.css" />
+    <link rel="stylesheet" type="text/css" href="css/foot.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/onepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/paintingboard.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/Swiper/dist/css/swiper.min.css" />
+    <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          var index=-1
+          var sliders = $('.slider')
+          setInterval(function () {
+            sliders.eq(index).hide()
+            index = (index+1)%3
+            sliders.eq(index).show()
+          },300)
+        });
+    </script>
+</head>
+
+<body>
+    <div id="title">PHILOSOPHY.</div>
+    <div id="spot">
+        <img src="images/spot.png" style="width:8.467mm;" /></div>
+    <div id="foot">
+        <img src="images/foot.png" style="width:31.352mm;" /></div>
+    <div class="board">
+        <div>
+            <div>
+                <div>
+                    <img class="slider" src="images/philosophy/016.jpg" style="display:none"/>
+                    <img class="slider" src="images/philosophy/017.jpg" style="display:none"/>
+                    <img class="slider" src="images/philosophy/018.jpg" style="display:none"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
