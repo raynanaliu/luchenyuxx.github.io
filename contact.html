@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CONTACT.</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/spot.css" />
+    <link rel="stylesheet" type="text/css" href="css/title.css" />
+    <link rel="stylesheet" type="text/css" href="css/foot.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/onepage.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/Swiper/dist/css/swiper.min.css" />
+    <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
+    <script src="javascript/onload.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                direction: 'vertical',
+                nextButton: 'body:not(.icons)'
+            })
+            $('.facebook').off('click')
+            $('.tumblr').off('click')
+            $('.twitter').off('click')
+            $('.instagram').off('click')
+            $('.linkedin').off('click')
+            $('.weibo').off('click')
+            $('.facebook').click(function () {
+              window.open('https://www.facebook.com/profile.php?id=100004189595072');
+            })
+            $('.tumblr').click(function () {
+              // window.location.href='https://www.facebook.com/profile.php?id=100004189595072';
+            })
+            $('.linkedin').click(function () {
+              window.open('fr.linkedin.com/in/raynanaliu');
+            })
+            $('.twitter').click(function () {
+              // window.location.href='https://www.facebook.com/profile.php?id=100004189595072';
+            })
+            $('.instagram').click(function () {
+              window.open('https://www.instagram.com/naliurayna');
+            })
+            $('.weibo').click(function () {
+              // window.location.href='https://www.facebook.com/profile.php?id=100004189595072';
+            })
+        });
+    </script>
+    <style>
+        body {
+            font-size: 9.5pt;
+        }
+
+        div p {
+            margin: 0;
+        }
+
+        #info {
+            vertical-align: middle;
+            text-align: center;
+            position: absolute;
+            right: 40px;
+            top: 90px;
+            line-height: 13.81pt;
+        }
+
+        .icons img {
+            height: 20px;
+            /*width: 30pt;*/
+        }
+
+        .icons th {
+            width: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">CONTACT.</div>
+    <div id="spot">
+        <img src="images/spot.png" style="width:8.467mm;" /></div>
+    <div id="foot">
+        <img src="images/foot.png" style="width:31.352mm;" /></div>
+    <div class="swiper-container" style="width:100%;height:100%;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div id="info">
+                    <table class="icons" style="margin: auto;">
+                        <tr>
+                            <th>
+                                <img class="facebook" src="images/facebook.png" />
+                            </th>
+                            <th>
+                                <img class="tumblr" src="images/tumblr.png" />
+                            </th>
+                            <th>
+                                <img class="linkedin" src="images/linkedin.png" />
+                            </th>
+                            <th>
+                                <img class="twitter" src="images/twitter.png" />
+                            </th>
+                            <th>
+                                <img class="instagram" src="images/instagram.png" />
+                            </th>
+                            <th>
+                                <img class="weibo" src="images/weibo.png" />
+                            </th>
+                        </tr>
+                    </table>
+                    <p>
+                        MME NALIU
+                    </p>
+                    <p>
+                        15 BIS RUE AMELIE
+                    </p>
+                    <p>
+                        75007, PARIS
+                    </p>
+                    <p>
+                        FRANCE
+                    </p>
+                    <p>
+                        RAYNANALIU@GMAIL.COM
+                    </p>
+                    <p>
+                        +33 (0)6 50 27 30 69
+                    </p>
+                    <p>
+                        WWW.NALIU.CO.UK
+                    </p>
+                    <img id="email" src="images/send an email.gif" style="margin-left:17px;width:50px;"/>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('images/contact/background.jpg');background-size:100%;">
+            </div>
+            <div class="swiper-slide" style="text-align:center">
+                <img src="images/contact/88659.gif" width="280px" style="position:relative;left:25px;margin-top:8%" />
+                <p style="font-size:60.87pt;margin-top:-20px;">
+                    FIN
+                </p>
+                <p style="margin-top: -5px;font-weight: bold;">
+                    WWW.NALIU.CO.UK
+                </p>
+                <p>
+                    DESIGNED BY NA LIU
+                </P>
+                <p>
+                    TECHNICAL SUPPORT BY CHENYU LU
+                </p>
+                <p>
+                    BACKGROUND MUSIC: ARTIST: TEMPLE,
+                </p>
+                <p>
+                    ALBUM: FLUORESCENCE
+                </p>
+                <table class="icons" style="position:absolute;bottom:8.5mm;left:50%;transform:translate(-50%);">
+                    <tr>
+                        <th>
+                            <img class="facebook" src="images/facebook.png" />
+                        </th>
+                        <th>
+                            <img class="tumblr" src="images/tumblr.png" />
+                        </th>
+                        <th>
+                            <img class="linkedin" src="images/linkedin.png" />
+                        </th>
+                        <th>
+                            <img class="twitter" src="images/twitter.png" />
+                        </th>
+                        <th>
+                            <img class="instagram" src="images/instagram.png" />
+                        </th>
+                        <th>
+                            <img class="weibo" src="images/weibo.png" />
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
