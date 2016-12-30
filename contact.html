@@ -19,8 +19,10 @@
                 $('#s2').animate({
                     'top': 0
                 }, 500)
-                $('#s1').animate({'top':'-100%'},500,function() {
-                  $('#s1').hide()
+                $('#s1').animate({
+                    'top': '-100%'
+                }, 500, function() {
+                    $('#s1').hide()
                 })
                 e.stopPropagation()
             })
@@ -29,8 +31,10 @@
                 $('#s3').animate({
                     'top': 0
                 }, 500)
-                $('#s1').animate({'top':'-100%'},500,function() {
-                  $('#s1').hide()
+                $('#s1').animate({
+                    'top': '-100%'
+                }, 500, function() {
+                    $('#s1').hide()
                 })
                 e.stopPropagation()
             })
@@ -91,14 +95,14 @@
         }
 
         #s1 {
-          top: 0;
+            top: 0;
             z-index: 50;
         }
 
         #s2 {
             z-index: 100;
-            background-image:url('images/contact/background.jpg');
-            background-size:100%;
+            background-image: url('images/contact/background.jpg');
+            background-size: 100%;
         }
 
         #s3 {
