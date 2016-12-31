@@ -35,6 +35,13 @@
                             break;
                         default:
                     }
+                    if ($(swiper.slides[swiper.activeIndex]).hasClass('has-white-foot')) {
+                        $('#white-foot').show()
+                        $('#black-foot').hide()
+                    } else {
+                        $('#white-foot').hide()
+                        $('#black-foot').show()
+                    }
                 },
                 onSlideChangeEnd: function(swiper) {
                     switch (swiper.activeIndex) {
@@ -89,10 +96,11 @@
     <div id="spot">
         <img src="images/spot.png" style="width:8.467mm;" /></div>
     <div id="foot">
-        <img src="images/foot.png" style="width:31.352mm;" /></div>
+        <img id='black-foot' src="images/foot.png" style="width:31.352mm;" />
+        <img id='white-foot' src="images/foot white.png" style="width:31.352mm;display:none;" /></div>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="board swiper-slide">
+            <div class="board swiper-slide has-white-foot">
                 <div>
                     <div>
                         <div>
@@ -128,7 +136,7 @@
                     </div>
                 </div>
             </div>
-            <div class="board swiper-slide">
+            <div class="board swiper-slide has-white-foot">
                 <div>
                     <div>
                         <div>
