@@ -12,27 +12,31 @@
     <link rel="stylesheet" type="text/css" href="css/pace.css" />
     <script src="javascript/pace.js"></script>
     <script>
+        $(window).on('load',function() {
+            $(".board").show();
+        });
         $(document).ready(function() {
             $('.entry').each(function() {
                 adjustToCenter(this)
                 loop(this)
             })
-            $('a').each(function () {
-              var image = $('img.'+this.className)[0]
-              this.style.top = addP(image.style.top, 2.5)
-              this.style.left = addP(image.style.left,1.5)
-              this.style.width = '7.5%'
-              this.style.height = '14%'
-              $(this).hover(function () {
-                $(image).hide()
-              },function () {
-                $(image).show()
-              })
+            $('a').each(function() {
+                var image = $('img.' + this.className)[0]
+                this.style.top = addP(image.style.top, 2.5)
+                this.style.left = addP(image.style.left, 1.5)
+                this.style.width = '7.5%'
+                this.style.height = '14%'
+                $(this).hover(function() {
+                    $(image).hide()
+                }, function() {
+                    $(image).show()
+                })
             })
         })
 
-        function addP(p1,p2){
-          return (parseFloat(p1)+p2) + "%"
+
+        function addP(p1, p2) {
+            return (parseFloat(p1) + p2) + "%"
         }
 
         function adjustToCenter(e) {
@@ -76,20 +80,21 @@
             /*width: 10.875%;*/
             /*display: none;*/
         }
-        a{
-          position: absolute;
-          z-index: 200;
+
+        a {
+            position: absolute;
+            z-index: 200;
         }
     </style>
 </head>
 
 <body>
-    <div class="board">
+    <div class="board" style="display:none">
         <div>
             <div>
                 <div>
                     <div style="line-height:0;position:relative;">
-                        <img src="images/homepage/SEPERATED_red/layer2.png" style="position:relative;width:100%;z-index:100;" usemap="#entry-map"/>
+                        <img src="images/homepage/SEPERATED_red/layer2.png" style="position:relative;width:100%;z-index:100;" usemap="#entry-map" />
                         <img src="images/homepage/SEPERATED_red/layer1.png" style="position:absolute;left:0;top:0;width:100%;z-index:50;" />
                         <img class="entry" src="images/homepage/SEPERATED_red/1.png" style="top:20.6%;left:0;" />
                         <img class="entry" src="images/homepage/SEPERATED_red/2.png" style="top:81.6%;left:0.05%;" />
