@@ -17,7 +17,8 @@
     <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
     <script src="javascript/onload.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(window).on('load', function() {
+            $(".content").show();
             var swiper1 = new Swiper('.swiper1', {
                 loop: true,
                 preloadImages: false,
@@ -123,55 +124,57 @@
 </head>
 
 <body>
-    <div id="title">ART.</div>
-    <div id="spot">
-        <img src="images/spot.png" style="width:8.467mm;" /></div>
-    <div id="foot">
-        <img id='black-foot' src="images/foot.png" style="width:31.352mm;" />
-        <img id='white-foot' src="images/foot white.png" style="width:31.352mm;display:none;" /></div>
-    <div class="swiper-container swiper1">
-        <div class="swiper-wrapper">
-            <div class="board swiper-slide has-white-foot">
-                <div>
+    <div class="content" style="display:none;width:100%;height:100%;">
+        <div id="title">ART.</div>
+        <div id="spot">
+            <img src="images/spot.png" style="width:8.467mm;" /></div>
+        <div id="foot">
+            <img id='black-foot' src="images/foot.png" style="width:31.352mm;" />
+            <img id='white-foot' src="images/foot white.png" style="width:31.352mm;display:none;" /></div>
+        <div class="swiper-container swiper1">
+            <div class="swiper-wrapper">
+                <div class="board swiper-slide has-white-foot">
                     <div>
                         <div>
-                            <img src="images/art/web design.jpg" />
+                            <div>
+                                <img src="images/art/web design.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="board swiper-slide has-white-foot">
-                <div>
+                <div class="board swiper-slide has-white-foot">
                     <div>
                         <div>
-                            <div class="wrap">
-                                <img src="images/art/separated/web design2.jpg" style="width:100%" />
-                                <div class="wrap" style="text-align:center;background:black;">
-                                    <video class="video1" width="83.2%">
+                            <div>
+                                <div class="wrap">
+                                    <img src="images/art/separated/web design2.jpg" style="width:100%" />
+                                    <div class="wrap" style="text-align:center;background:black;">
+                                        <video class="video1" width="83.2%">
                                     <source src="videos/untouchable.mp4" type="video/mp4">
                                     </video>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <div class="wrap">
-                                <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
-                                <img src="images/art/separated/5.jpg" style="width:100%;position:absolute;top:0;left:0;" />
-                                <img src="images/art/separated/6.jpg" style="width:100%;position:absolute;top:24.15%;left:0;" />
-                                <div class="swiper-container swiper2" style="width:100%;height:72%;position:absolute;bottom:0;left:0;">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="images/art/separated/4.jpg" style="width:100%" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/art/separated/7.jpg" style="width:100%" />
+                            <div>
+                                <div class="wrap">
+                                    <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
+                                    <img src="images/art/separated/5.jpg" style="width:100%;position:absolute;top:0;left:0;" />
+                                    <img src="images/art/separated/6.jpg" style="width:100%;position:absolute;top:24.15%;left:0;" />
+                                    <div class="swiper-container swiper2" style="width:100%;height:72%;position:absolute;bottom:0;left:0;">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="images/art/separated/4.jpg" style="width:100%" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="images/art/separated/7.jpg" style="width:100%" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -179,39 +182,39 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <img src="images/art/web design5.jpg" />
+                            <div>
+                                <img src="images/art/web design5.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <div class="wrap">
-                                <div class="swiper-container swiper3" style="width:47.1875%;height:100%;display:block;position:absolute;left:0;bottom:0">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="images/art/separated/webdesign7left.jpg" style="width:100%" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/art/separated/webdesign9left.jpg" style="width:100%" />
+                            <div>
+                                <div class="wrap">
+                                    <div class="swiper-container swiper3" style="width:47.1875%;height:100%;display:block;position:absolute;left:0;bottom:0">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="images/art/separated/webdesign7left.jpg" style="width:100%" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="images/art/separated/webdesign9left.jpg" style="width:100%" />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <img src="images/art/separated/webdesign9middle.jpg" style="position:relative;left:47.187%;width:5.814%;" />
-                                <div class="swiper-container swiper4" style="width:47%;height:100%;position:absolute;right:0;bottom:0;display:block;">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img src="images/art/separated/webdesign7right.jpg" style="width:100%" />
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <img src="images/art/separated/webdesign9right.jpg" style="width:100%" />
+                                    <img src="images/art/separated/webdesign9middle.jpg" style="position:relative;left:47.187%;width:5.814%;" />
+                                    <div class="swiper-container swiper4" style="width:47%;height:100%;position:absolute;right:0;bottom:0;display:block;">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <img src="images/art/separated/webdesign7right.jpg" style="width:100%" />
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <img src="images/art/separated/webdesign9right.jpg" style="width:100%" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -219,48 +222,48 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <img src="images/art/028.jpg" />
+                            <div>
+                                <img src="images/art/028.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <img src="images/art/029.jpg" />
+                            <div>
+                                <img src="images/art/029.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <img src="images/art/030.jpg" />
+                            <div>
+                                <img src="images/art/030.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <img src="images/art/031.jpg" />
+                            <div>
+                                <img src="images/art/031.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="board swiper-slide">
-                <div>
+                <div class="board swiper-slide">
                     <div>
                         <div>
-                            <img src="images/art/032.jpg" />
+                            <div>
+                                <img src="images/art/032.jpg" />
+                            </div>
                         </div>
                     </div>
                 </div>

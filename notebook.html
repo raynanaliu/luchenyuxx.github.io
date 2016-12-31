@@ -17,7 +17,8 @@
     <script src="bower_components/Swiper/dist/js/swiper.min.js"></script>
     <script src="javascript/onload.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(window).on('load', function() {
+            $(".content").show();
             var swiper = new Swiper('.swiper-container', {
                 loop: true,
                 preloadImages: false,
@@ -39,39 +40,41 @@
 </head>
 
 <body>
-    <div id="title">NOTEBOOK.</div>
-    <div id="spot">
-        <img src="images/spot.png" style="width:8.467mm;" /></div>
-    <div id="foot">
-        <img src="images/foot.png" style="width:31.352mm;" /></div>
-    <div class="board">
-        <div>
+    <div class="content" style="display:none;width:100%;height:100%;">
+        <div id="title">NOTEBOOK.</div>
+        <div id="spot">
+            <img src="images/spot.png" style="width:8.467mm;" /></div>
+        <div id="foot">
+            <img src="images/foot.png" style="width:31.352mm;" /></div>
+        <div class="board">
             <div>
                 <div>
-                    <div class="wrap">
-                        <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
-                        <div class="swiper-container" style="position:absolute;width:100%;height:100%;top:0;right:0;">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="images/notebook/033.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/notebook/034.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/notebook/035.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/notebook/036.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/notebook/037.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/notebook/038.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/notebook/039.jpg" />
+                    <div>
+                        <div class="wrap">
+                            <img src="images/white.jpg" style="position:relative;width:100%;opacity:0;" />
+                            <div class="swiper-container" style="position:absolute;width:100%;height:100%;top:0;right:0;">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="images/notebook/033.jpg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/notebook/034.jpg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/notebook/035.jpg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/notebook/036.jpg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/notebook/037.jpg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/notebook/038.jpg" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/notebook/039.jpg" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +83,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

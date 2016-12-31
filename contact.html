@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="css/onepage.css" />
     <script src="javascript/onload.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(window).on('load', function() {
+            $(".content").show();
             $('.email').click(function(e) {
                 // $('#s2').show()
                 // $('#s2').animate({
@@ -121,43 +122,156 @@
             font-size: 13pt;
             font-weight: bold;
         }
+
         #form input {
-          width: 310px;
-          height: 85%;
-          background: transparent;
-          border: 1px solid white;
-          font-size: 12pt;
-          font-weight: bold;
-          color: white;
-          font-style: italic;
+            width: 310px;
+            height: 85%;
+            background: transparent;
+            border: 1px solid white;
+            font-size: 12pt;
+            font-weight: bold;
+            color: white;
+            font-style: italic;
         }
+
         #form textarea {
-          width: 308px;
-          height: 100%;
-          background: transparent;
-          height: 100%;
-          border: 1px solid white;
-          resize: none;
-          font-size: 12pt;
-          font-weight: bold;
-          color: white;
-          font-style: italic;
+            width: 308px;
+            height: 100%;
+            background: transparent;
+            height: 100%;
+            border: 1px solid white;
+            resize: none;
+            font-size: 12pt;
+            font-weight: bold;
+            color: white;
+            font-style: italic;
         }
+
         #submit {
-          cursor: pointer;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <div id="title">CONTACT.</div>
-    <div id="spot">
-        <img src="images/spot.png" style="width:8.467mm;" /></div>
-    <div id="foot">
-        <img src="images/foot.png" style="width:31.352mm;" /></div>
-    <div id="s1" class="slide">
-        <div id="info">
-            <table class="icons" style="margin: auto;">
+    <div class="content" style="display:none;width:100%;height:100%;">
+        <div id="title">CONTACT.</div>
+        <div id="spot">
+            <img src="images/spot.png" style="width:8.467mm;" /></div>
+        <div id="foot">
+            <img src="images/foot.png" style="width:31.352mm;" /></div>
+        <div id="s1" class="slide">
+            <div id="info">
+                <table class="icons" style="margin: auto;">
+                    <tr>
+                        <th>
+                            <img class="facebook" src="images/facebook.png" />
+                        </th>
+                        <th>
+                            <img class="tumblr" src="images/tumblr.png" />
+                        </th>
+                        <th>
+                            <img class="linkedin" src="images/linkedin.png" />
+                        </th>
+                        <th>
+                            <img class="twitter" src="images/twitter.png" />
+                        </th>
+                        <th>
+                            <img class="instagram" src="images/instagram.png" />
+                        </th>
+                        <th>
+                            <img class="weibo" src="images/weibo.png" />
+                        </th>
+                    </tr>
+                </table>
+                <p>
+                    MME NALIU
+                </p>
+                <p>
+                    15 BIS RUE AMELIE
+                </p>
+                <p>
+                    75007, PARIS
+                </p>
+                <p>
+                    FRANCE
+                </p>
+                <p>
+                    RAYNANALIU@GMAIL.COM
+                </p>
+                <p>
+                    +33 (0)6 50 27 30 69
+                </p>
+                <p>
+                    WWW.NALIU.CO.UK
+                </p>
+                <a href="mailto:raynanaliu@gmail.com"><img class="email" src="images/send an email.png" style="margin-left:7px;width:50px;cursor:pointer;" /></a>
+            </div>
+        </div>
+        <div id="s2" class="slide">
+            <table id="form">
+                <tr valign='top' height="8%">
+                    <td align="right" style="width:25%;">
+                        FIRST NAME:
+                    </td>
+                    <td>
+                        <input id="fname" />
+                    </td>
+                </tr>
+                <tr valign='top' height="8%">
+                    <td align="right">
+                        LAST NAME:
+                    </td>
+                    <td>
+                        <input id="lname" />
+                    </td>
+                </tr>
+                <tr valign='top' height="8%">
+                    <td align="right">
+                        EMAIL:
+                    </td>
+                    <td>
+                        <input id="eaddress" />
+                    </td>
+                </tr>
+                <tr valign='top'>
+                    <td align="right">
+                        MESSAGE:
+                    </td>
+                    <td height="50%">
+                        <textarea id="emailbody"></textarea>
+                    </td>
+                </tr>
+                <tr valign='top'>
+                    <td>
+                    </td>
+                    <td>
+                        <img id="submit" src="images/spot white.png" style="width:30px;position:relative;left:145px;top:15px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="s3" class="slide" style="text-align:center">
+            <img src="images/contact/88659.gif" width="280px" style="position:relative;left:25px;margin-top:8%" />
+            <p style="font-size:60.87pt;margin-top:-20px;">
+                FIN
+            </p>
+            <p style="margin-top: -5px;font-weight: bold;">
+                WWW.NALIU.CO.UK
+            </p>
+            <p>
+                DESIGNED BY NA LIU
+            </P>
+            <p>
+                TECHNICAL SUPPORT BY CHENYU LU
+            </p>
+            <p>
+                BACKGROUND MUSIC: ARTIST: TEMPLE,
+            </p>
+            <p>
+                ALBUM: FLUORESCENCE
+            </p>
+            <table class="icons" style="position:absolute;bottom:8.5mm;left:50%;transform:translate(-50%);">
                 <tr>
                     <th>
                         <img class="facebook" src="images/facebook.png" />
@@ -179,115 +293,7 @@
                     </th>
                 </tr>
             </table>
-            <p>
-                MME NALIU
-            </p>
-            <p>
-                15 BIS RUE AMELIE
-            </p>
-            <p>
-                75007, PARIS
-            </p>
-            <p>
-                FRANCE
-            </p>
-            <p>
-                RAYNANALIU@GMAIL.COM
-            </p>
-            <p>
-                +33 (0)6 50 27 30 69
-            </p>
-            <p>
-                WWW.NALIU.CO.UK
-            </p>
-            <a href="mailto:raynanaliu@gmail.com"><img class="email" src="images/send an email.png" style="margin-left:7px;width:50px;cursor:pointer;" /></a>
         </div>
-    </div>
-    <div id="s2" class="slide">
-        <table id="form">
-            <tr valign='top' height="8%">
-                <td align="right" style="width:25%;">
-                    FIRST NAME:
-                </td>
-                <td>
-                    <input id="fname" />
-                </td>
-            </tr>
-            <tr valign='top' height="8%">
-                <td align="right">
-                    LAST NAME:
-                </td>
-                <td>
-                    <input id="lname" />
-                </td>
-            </tr>
-            <tr valign='top' height="8%">
-                <td align="right">
-                    EMAIL:
-                </td>
-                <td>
-                    <input id="eaddress" />
-                </td>
-            </tr>
-            <tr valign='top'>
-                <td align="right">
-                    MESSAGE:
-                </td>
-                <td height="50%">
-                    <textarea id="emailbody"></textarea>
-                </td>
-            </tr>
-            <tr valign='top'>
-              <td>
-              </td>
-              <td>
-                <img id="submit" src="images/spot white.png" style="width:30px;position:relative;left:145px;top:15px;"/>
-              </td>
-            </tr>
-        </table>
-    </div>
-    <div id="s3" class="slide" style="text-align:center">
-        <img src="images/contact/88659.gif" width="280px" style="position:relative;left:25px;margin-top:8%" />
-        <p style="font-size:60.87pt;margin-top:-20px;">
-            FIN
-        </p>
-        <p style="margin-top: -5px;font-weight: bold;">
-            WWW.NALIU.CO.UK
-        </p>
-        <p>
-            DESIGNED BY NA LIU
-        </P>
-        <p>
-            TECHNICAL SUPPORT BY CHENYU LU
-        </p>
-        <p>
-            BACKGROUND MUSIC: ARTIST: TEMPLE,
-        </p>
-        <p>
-            ALBUM: FLUORESCENCE
-        </p>
-        <table class="icons" style="position:absolute;bottom:8.5mm;left:50%;transform:translate(-50%);">
-            <tr>
-                <th>
-                    <img class="facebook" src="images/facebook.png" />
-                </th>
-                <th>
-                    <img class="tumblr" src="images/tumblr.png" />
-                </th>
-                <th>
-                    <img class="linkedin" src="images/linkedin.png" />
-                </th>
-                <th>
-                    <img class="twitter" src="images/twitter.png" />
-                </th>
-                <th>
-                    <img class="instagram" src="images/instagram.png" />
-                </th>
-                <th>
-                    <img class="weibo" src="images/weibo.png" />
-                </th>
-            </tr>
-        </table>
     </div>
 </body>
 
