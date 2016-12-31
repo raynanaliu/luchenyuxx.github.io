@@ -10,20 +10,20 @@
     <link rel="stylesheet" type="text/css" href="css/foot.css" />
     <link rel="stylesheet" type="text/css" href="css/font.css" />
     <link rel="stylesheet" type="text/css" href="css/onepage.css" />
-    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
     <script src="javascript/onload.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.email').click(function(e) {
-                $('#s2').show()
-                $('#s2').animate({
-                    'top': 0
-                }, 500)
-                $('#s1').animate({
-                    'top': '-100%'
-                }, 500, function() {
-                    $('#s1').hide()
-                })
+                // $('#s2').show()
+                // $('#s2').animate({
+                //     'top': 0
+                // }, 500)
+                // $('#s1').animate({
+                //     'top': '-100%'
+                // }, 500, function() {
+                //     $('#s1').hide()
+                // })
+                // window.open('mailto:raynanaliu@gmail.com')
                 e.stopPropagation()
             })
             $('#s1').click(function(e) {
@@ -101,12 +101,50 @@
 
         #s2 {
             z-index: 100;
-            background-image: url('images/contact/background.jpg');
-            background-size: 100%;
+            background-image: url('images/contact/081-0.jpg');
+            background-size: auto 100%;
+            background-position: center;
         }
 
         #s3 {
             z-index: 200;
+        }
+
+        #form {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 470px;
+            height: 600px;
+            transform: translate(-50%);
+            color: white;
+            font-size: 13pt;
+            font-weight: bold;
+        }
+        #form input {
+          width: 310px;
+          height: 85%;
+          background: transparent;
+          border: 1px solid white;
+          font-size: 12pt;
+          font-weight: bold;
+          color: white;
+          font-style: italic;
+        }
+        #form textarea {
+          width: 308px;
+          height: 100%;
+          background: transparent;
+          height: 100%;
+          border: 1px solid white;
+          resize: none;
+          font-size: 12pt;
+          font-weight: bold;
+          color: white;
+          font-style: italic;
+        }
+        #submit {
+          cursor: pointer;
         }
     </style>
 </head>
@@ -162,10 +200,51 @@
             <p>
                 WWW.NALIU.CO.UK
             </p>
-            <img class="email" src="images/send an email.gif" style="margin-left:7px;width:50px;cursor:pointer;" />
+            <a href="mailto:raynanaliu@gmail.com"><img class="email" src="images/send an email.png" style="margin-left:7px;width:50px;cursor:pointer;" /></a>
         </div>
     </div>
     <div id="s2" class="slide">
+        <table id="form">
+            <tr valign='top' height="8%">
+                <td align="right" style="width:25%;">
+                    FIRST NAME:
+                </td>
+                <td>
+                    <input id="fname" />
+                </td>
+            </tr>
+            <tr valign='top' height="8%">
+                <td align="right">
+                    LAST NAME:
+                </td>
+                <td>
+                    <input id="lname" />
+                </td>
+            </tr>
+            <tr valign='top' height="8%">
+                <td align="right">
+                    EMAIL:
+                </td>
+                <td>
+                    <input id="eaddress" />
+                </td>
+            </tr>
+            <tr valign='top'>
+                <td align="right">
+                    MESSAGE:
+                </td>
+                <td height="50%">
+                    <textarea id="emailbody"></textarea>
+                </td>
+            </tr>
+            <tr valign='top'>
+              <td>
+              </td>
+              <td>
+                <img id="submit" src="images/spot white.png" style="width:30px;position:relative;left:145px;top:15px;"/>
+              </td>
+            </tr>
+        </table>
     </div>
     <div id="s3" class="slide" style="text-align:center">
         <img src="images/contact/88659.gif" width="280px" style="position:relative;left:25px;margin-top:8%" />
