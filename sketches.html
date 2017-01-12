@@ -20,10 +20,12 @@
         $(window).on('load', function() {
             $(".content").show();
             var swiper = new Swiper('.swiper-container', {
-                loop: true,
+                // loop: true,
                 preloadImages: false,
                 lazyLoading: true,
-                nextButton: 'body'
+                nextButton: 'body',
+                mousewheelControl: true,
+                mousewheelForceToAxis:true
             })
         });
     </script>

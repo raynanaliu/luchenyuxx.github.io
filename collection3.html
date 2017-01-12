@@ -20,10 +20,14 @@
         $(window).on('load', function() {
             $(".content").show();
             var swiper2 = new Swiper('.swiper2', {
-                loop: true,
+                // loop: true,
                 preloadImages: false,
                 lazyLoading: true,
-                nextButton: 'body'
+                nextButton: 'body',
+                mousewheelControl: true,
+                mousewheelForceToAxis:true
+                // mousewheelSensitivity:1
+                // mousewheelReleaseOnEdges:true
             })
             var swiper1 = new Swiper('.swiper1', {
                 loop: true,

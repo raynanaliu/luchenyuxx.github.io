@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/pace.css" />
     <script src="javascript/pace.js"></script>
     <script>
-        $(window).on('load',function() {
+        $(window).on('load', function() {
             $(".board").show();
             $('.entry').each(function() {
                 adjustToCenter(this)
@@ -30,6 +30,19 @@
                     $(image).show()
                 })
             })
+            $('.on').click(function () {
+              $('.video').prop('muted',true)
+              $(this).hide()
+              $('.off').show()
+            })
+            $('.off').click(function () {
+              $('.video').prop('muted',false)
+              $(this).hide()
+              $('.on').show()
+            })
+            $("body").on("contextmenu", function(e) {
+                return false;
+            });
         })
 
 
@@ -83,6 +96,24 @@
             position: absolute;
             z-index: 200;
         }
+
+        div.wrap {
+            position: relative;
+            line-height: 0;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        .off{
+          display: none;
+        }
+        .volumn{
+          cursor: pointer;
+          position: absolute;
+          width: 3%;
+          top: 10px;
+          right: 10px;
+          z-index: 1000;
+        }
     </style>
 </head>
 
@@ -91,30 +122,40 @@
         <div>
             <div>
                 <div>
-                    <div style="line-height:0;position:relative;">
-                        <img src="images/homepage/SEPERATED_red/layer2.png" style="position:relative;width:100%;z-index:100;" usemap="#entry-map" />
-                        <img src="images/homepage/SEPERATED_red/layer1.png" style="position:absolute;left:0;top:0;width:100%;z-index:50;" />
-                        <img class="entry" src="images/homepage/SEPERATED_red/1.png" style="top:20.6%;left:0;z-index:90;" />
-                        <img class="entry" src="images/homepage/SEPERATED_red/2.png" style="top:81.6%;left:0.05%;z-index:90;" />
-                        <img class="entry notebook" src="images/homepage/SEPERATED_red/3.png" style="left:13.55%;top:41.71%;z-index:89;" />
-                        <img class="entry philosophy" src="images/homepage/SEPERATED_red/4.png" style="left:23.39%;top:71.15%;z-index:89;" />
-                        <img class="entry about" src="images/homepage/SEPERATED_red/5.png" style="left:30.52%;top:12.31%;z-index:88;" />
-                        <img class="entry collage" src="images/homepage/SEPERATED_red/6.png" style="top:54%;left:40.4%;z-index:88;" />
-                        <img class="entry collection" src="images/homepage/SEPERATED_red/7.png" style="top:22.41%;left:53.4%;z-index:87;" />
-                        <img class="entry sketch" src="images/homepage/SEPERATED_red/8.png" style="top:86.4%;left:57.1%;z-index:87;" />
-                        <img class="entry commercial" src="images/homepage/SEPERATED_red/9.png" style="top:45.6%;left:69.85%;z-index:86;" />
-                        <img class="entry contact" src="images/homepage/SEPERATED_red/10.png" style="top:71.15%;left:83.3%;z-index:80;" />
-                        <img class="entry art" src="images/homepage/SEPERATED_red/11.png" style="top:20.8%;left:83.9%;z-index:80;" />
-                        <img class="entry" src="images/homepage/SEPERATED_red/12.png" style="top:54.02%;left:100.25%;z-index75;" />
-                        <a class="notebook" href="notebook.html"></a>
-                        <a class="philosophy" href="philosophy.html"></a>
-                        <a class="about" href="about.html"></a>
-                        <!-- <a class="collage" href="collage.html"></a> -->
-                        <a class="collection" href="collection1.html"></a>
-                        <a class="sketch" href="sketches.html"></a>
-                        <a class="commercial" href="login.html"></a>
-                        <a class="contact" href="contact.html"></a>
-                        <a class="art" href="art.html"></a>
+                    <div class="wrap">
+                        <img src="images/index-white.jpg" style="position:relative;width:100%;opacity:0;" />
+                        <img class="volumn off" src="images/no speaker bk.png" />
+                        <img class="volumn on" src="images/speaker bk.png" />
+                        <div class="slide1" style="line-height:0;position:absolute;top:0;left:0;height:100%;width:103%;">
+                          <video class="video" autoplay loop style="width:100%">
+                            <source src="videos/logovideo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="slide2" style="line-height:0;position:absolute;top:100%;left:0;height:100%;width:100%;">
+                            <img src="images/homepage/SEPERATED_red/layer2.png" style="position:relative;width:100%;z-index:100;" usemap="#entry-map" />
+                            <img src="images/homepage/SEPERATED_red/layer1.png" style="position:absolute;left:0;top:0;width:100%;z-index:50;" />
+                            <img class="entry" src="images/homepage/SEPERATED_red/1.png" style="top:20.6%;left:0;z-index:90;" />
+                            <img class="entry" src="images/homepage/SEPERATED_red/2.png" style="top:81.6%;left:0.05%;z-index:90;" />
+                            <img class="entry notebook" src="images/homepage/SEPERATED_red/3.png" style="left:13.55%;top:41.71%;z-index:89;" />
+                            <img class="entry philosophy" src="images/homepage/SEPERATED_red/4.png" style="left:23.39%;top:71.15%;z-index:89;" />
+                            <img class="entry about" src="images/homepage/SEPERATED_red/5.png" style="left:30.52%;top:12.31%;z-index:88;" />
+                            <img class="entry collage" src="images/homepage/SEPERATED_red/6.png" style="top:54%;left:40.4%;z-index:88;" />
+                            <img class="entry collection" src="images/homepage/SEPERATED_red/7.png" style="top:22.41%;left:53.4%;z-index:87;" />
+                            <img class="entry sketch" src="images/homepage/SEPERATED_red/8.png" style="top:86.4%;left:57.1%;z-index:87;" />
+                            <img class="entry commercial" src="images/homepage/SEPERATED_red/9.png" style="top:45.6%;left:69.85%;z-index:86;" />
+                            <img class="entry contact" src="images/homepage/SEPERATED_red/10.png" style="top:71.15%;left:83.3%;z-index:80;" />
+                            <img class="entry art" src="images/homepage/SEPERATED_red/11.png" style="top:20.8%;left:83.9%;z-index:80;" />
+                            <img class="entry" src="images/homepage/SEPERATED_red/12.png" style="top:54.02%;left:100.25%;z-index75;" />
+                            <a class="notebook" href="notebook.html"></a>
+                            <a class="philosophy" href="philosophy.html"></a>
+                            <a class="about" href="about.html"></a>
+                            <!-- <a class="collage" href="collage.html"></a> -->
+                            <a class="collection" href="collection1.html"></a>
+                            <a class="sketch" href="sketches.html"></a>
+                            <a class="commercial" href="login.html"></a>
+                            <a class="contact" href="contact.html"></a>
+                            <a class="art" href="art.html"></a>
+                        </div>
                     </div>
                 </div>
             </div>

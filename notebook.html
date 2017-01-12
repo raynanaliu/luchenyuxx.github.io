@@ -20,8 +20,10 @@
         $(window).on('load', function() {
             $(".content").show();
             var swiper = new Swiper('.swiper-container', {
-                loop: true,
+                // loop: true,
                 preloadImages: false,
+                mousewheelControl: true,
+                mousewheelForceToAxis:true,
                 lazyLoading: true,
                 nextButton: 'body'
             })
