@@ -22,8 +22,6 @@
     <script src="js/jquery.smartmenus.min.js" type="text/javascript"></script>
 <style>
 
-  #img1{width:100%;}@media(max-width:768px){html,body{width:100%;height:100%;overflow:hidden;}.footer{position:absolute;bottom:0;left:0;background:white;}.main{height:100%;width:100%;}}#img1{height:100%;}
-
 </style>
   </head>
 
@@ -98,23 +96,38 @@
     </nav>
 
     <div class="main">
-    <img id="img1" src="images/front_page_01.gif" alt />
-
-<div id="div1" style="font-style:italic;position:fixed;bottom:30px;right:20px;background-color:rgb(238,162,191);text-align:center;line-height:normal;border-radius:10px;padding:10px
-                                           10px;width:280px;height:120px;">
-  <div style="margin-top:10px;">
-    <span style="background-color:black;color:white;padding:2px
-    20px;">
-      Follow on
-    </span>
+    <div class="pure-g">
+  <div class="pure-u-1 pure-u-md-2-3">
+    <img class="pure-img" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_01.jpg" />
   </div>
-  <div style="font-size:10pt;padding-top:10px;">
-    www.naliu.co.uk<br>
-    <a href="http://www.instagram.com/naliurayna" style="text-decoration:none;color:black;">http://www.instagram.com/naliurayna</a><br>
-     <a href="mailto:raynanliu@gmail.com" style="text-decoration:none;color:black;">raynanaliu@gmail.com</a>
+  <div class="sm-hide pure-u-md-1-3" style="background-color:rgb(226,155,192);">
+    <div class="moveground">
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_02.png" style="max-width:50%;position:absolute;left:98px;top:24px;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_03.png" style="max-width:30%;position:absolute;left:42px;top:200px;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_04.png" style="max-width:55%;left:72px;top:585px;position:absolute;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_05.png" style="max-width:75%;left:75px;top:127px;position:absolute;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_06.png" style="max-width:32%;left:279px;top:240px;position:absolute;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_07.png" style="max-width:22%;left:184px;top:193px;position:absolute;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_08.png" style="max-width:25%;left:272px;top:435px;position:absolute;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_09.png" style="max-width:55%;left:125px;top:687px;position:absolute;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_10.png" style="max-width:50%;left:0;top:35px;position:absolute;" />
+      <img class="draggable" src="images/1_apples_gather_together_to_show_off/1_apples_gather_together_to_show_off_11.png" style="max-width:60%;left:1px;top:437px;position:absolute;" />
+      <div style="line-height:normal;position:absolute;bottom:35px;font-size:0.8vw;left:20px;z-index:1;">
+        <span style="font-style:italic;">1, Apples Gather Together to Show Off, 2018</span><br>
+        Acrylic and oil pastels on paper<br>
+        22 5/16 x 29 15/16 in<br>
+        56,7cm x 76cm<br>
+        ID #38
+      </div>
+    </div>
   </div>
-  <img src="images/back(93*93).png" style="width:27px;position:absolute;right:18px;bottom:18px;cursor:pointer;" onclick="getElementById('div1').style.display='none'" />
 </div>
+
+<script>
+  $(function(){
+    $(".draggable").draggable({containment: ".moveground", scroll:false})
+  });
+</script>
 
     </div>
 
